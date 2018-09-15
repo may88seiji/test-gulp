@@ -1,0 +1,70 @@
+html {
+
+}
+
+body {
+  @include f_base;
+  font-size: 14px;
+  font-weight: normal;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.75;
+  background-color: $c_w;
+  color: $c_k;
+
+  /* number のカウンタを 0 にセット */
+  counter-reset: number 0;
+
+  //scrollBan
+  &.is-fixed {
+    position: fixed;
+  }
+}
+img {
+  max-width: 100%;
+  @include mqNotSP{
+    backface-visibility: hidden;
+  }
+  @include mqSP{
+    height: auto;
+  }
+}
+
+a{
+  text-decoration: none;
+}
+
+input:-webkit-autofill{
+  -webkit-transition: background-color 9999s !important;
+  transition: background-color 9999s !important;
+}
+
+//反転
+::selection {
+  background: #ed9026;
+  ::-moz-selection {
+    background: #ed9026;
+  }
+}
+/* ----------------------------
+* svg
+* -------------------------- */
+.svg-symbol{
+  display: none;
+}
+
+/* ----------------------------
+* use-sp
+* -------------------------- */
+.use-sp{
+  > body{
+    cursor: pointer;
+  }
+}
+
+body {
+  div {
+    color: red;
+  }
+}

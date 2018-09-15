@@ -1,0 +1,223 @@
+.cards{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  @include mqNotSP{
+    margin-bottom: 42px;
+  }
+  @include mqSP{
+    margin-bottom: 22px;
+  }
+  
+  li{
+    @include mqNotSP{
+      width: calc-vw(334,1280);
+      margin-bottom: 34px;
+    }
+    @include mqSP{
+//      width: calc-vw(136,320);
+      width: calc(50% - 5px);
+      margin-bottom: 18px;
+    }
+    
+    &:nth-child(odd) {
+      @include mqSP{
+        margin-right: 10px;
+      }
+    }
+    &:not(:nth-child(3n)) {
+      @include mqNotSP{
+        margin-right: calc-vw(39,1280);
+      }
+    }
+    a{
+      @include mqPC{
+        &:hover {
+          img{
+            transform: scale(1.05) translateX(-47%);
+          }
+          .card-top{
+            &::before {
+              opacity: 1;
+            }
+            span {
+              transform: translateY(-50%);
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .card-top{
+    background-color: $c_w;
+    @include mqNotSP{
+      width: calc(100% - 12px);
+      height: calc-vw(210,1280);
+      margin-bottom: 24px;
+      border: 6px solid $c_w;
+      transition: $tr_speed;
+      overflow: hidden;
+      position: relative;
+      @include mqPC{
+        &::before {
+          content: "";
+          background-color: rgba(237,144,38,0.7);
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: calc-vw(220,1280);
+          opacity: 0;
+          z-index: $top-complement_box-img;
+          transition: $tr_speed;
+        }
+      }
+    }
+    @include mqSP{
+//      width: 100%;
+      margin-bottom: 10px;
+      height: calc-vw(92,320);
+      border: 5px solid $c_w;
+      overflow: hidden;
+    }
+    span{
+      @include f_lato;
+      font-weight: bold;
+      color: $c_w;
+      position: absolute;
+      top: 50%;
+      transform: translateY(calc(-50% + 10px));
+      left: 0;
+      right: 0;
+      text-align: center;
+      z-index: $more;
+      transition: $tr_speed;
+      opacity: 0;
+    }
+  }
+  
+  img{
+    @include mqNotSP{
+//      width: 100%;
+      transition: $tr_speed;
+      height: 100%;
+      transition: .3s;
+      position: absolute;
+      left: 50%;
+      z-index: 0;
+      transform: translateX(-50%);
+    }
+    @include mqSP{
+//      box-sizing: border-box;
+//      margin: 3px;
+//      width: calc(100% - 6px);
+      height: 100%;
+      max-width: inherit;
+      transform: translateX(-10px);
+    }
+    
+    .page_about &{
+      @include mqNotSP{
+        height: inherit;
+        width: 100%;
+      }
+    }
+  }
+  
+  span{
+    @include f_lato;
+    @include mqNotSP{
+      font-size: 12px;
+    }
+    @include mqSP{
+    
+    }
+    
+    .page_about &{
+      @include mqNotSP{
+        display: block;
+        margin-bottom: 6px;
+        line-height: 1.25;
+      }
+    }
+  }
+  
+  p{
+    line-height: 1.4;
+    @include mqNotSP{
+      font-size: 14px;
+    }
+    @include mqSP{
+      font-size: 12px;
+    }
+  }
+  
+  .card-bottom{
+    @include mqNotSP{
+      
+    }
+    @include mqSP{
+    
+    }
+    span{
+      @include mqNotSP{
+      }
+      @include mqSP{
+        font-size: 11px;
+        display: inline-block;
+        line-height: 1.3;
+        margin-bottom: 10px;
+      }
+      
+      .page_work &{
+        @include mqSP{
+          display: inline-block;
+        }
+      }
+      .page_about &{
+        @include mqSP{
+          display: block;
+        }
+      }
+    }
+  }
+  
+  /* ----------------------------
+  * about
+  * -------------------------- */
+  .card-name{
+    @include f_lato;
+    font-weight: 900;
+    @include mqNotSP{
+      font-size: 20px;
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    @include mqSP{
+      font-size: 16px;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+  }
+  
+  /* ----------------------------
+  * work
+  * -------------------------- */
+  .card-category{
+    border-bottom: 1px solid $c_k;
+    @include f_lato;
+    font-weight: 900;
+    @include mqNotSP{
+      font-size: 12px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+    @include mqSP{
+      font-size: 12px;
+      margin-bottom: 14px;
+      display: inline-block;
+    }
+  }
+}

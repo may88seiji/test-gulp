@@ -1,0 +1,45 @@
+.logo{
+  cursor: pointer;
+  use{
+    fill: $c_w;
+  }
+  @include mqNotSP{
+    
+  }
+  @include mqSP{
+  
+  }
+  
+  /* ----------------------------
+  * header gnav
+  * -------------------------- */
+  .gnav-inner &{
+    @include mqNotSP{
+      height: 110px;
+      width: 120px;
+      margin-top: -4px;
+      transition: $tr_gnav;
+    }
+    @include mqSP{
+      height: 60px;
+      width: 52px;
+    }
+  }
+  
+  /* ----------------------------
+  * footer
+  * -------------------------- */
+  .footer-inner &{
+    @include mqNotSP{
+      margin:50px auto 27px;
+      width: 150px;
+      height: 144px;
+    }
+    @include mqSP{
+      margin: 30px auto 20px;
+      height: 100px;
+      width: 100px;
+    }
+  }
+  
+}

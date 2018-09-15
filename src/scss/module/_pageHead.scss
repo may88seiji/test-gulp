@@ -1,0 +1,162 @@
+.pageHead{
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  
+  overflow: hidden;
+  position: relative;
+  
+  @include mqNotSP{
+    height: 400px;
+    margin-bottom: 10px;
+  }
+  @include mqSP{
+    height: 190px;
+    margin-bottom: 5px;
+  }
+
+  ul{
+    @include f_lato;
+    font-weight: 900;
+    color: $c_w;
+    text-align: center;
+    @include mqNotSP{
+    }
+    @include mqSP{
+    
+    }
+  }
+  
+  li{
+    display: inline-block;
+    @include mqNotSP{
+      font-size: 20px;
+      margin: 0 8px;
+      position: relative;
+      line-height: 1.4;
+    }
+    @include mqSP{
+      font-size: 16px;
+      margin: 0 4px;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      border-bottom: 2px solid $c_w;
+      width: 0;
+      left: 0;
+      bottom: -2px;
+      transition: $tr_speed;
+    }
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+    
+    &.is-current {
+      border-bottom: 2px solid $c_w;
+      pointer-events: none;
+      @include mqNotSP{
+        
+      }
+      @include mqSP{
+      
+      }
+    }
+  }
+  
+  /* ----------------------------
+  * kv
+  * -------------------------- */
+  //journeyArchives
+//  .page_journeyArchives &{
+//    background: linear-gradient(0deg,transparent 0,rgba(0,0,0,.3) 100%), url(../img/kv_journey.jpg) center center /cover no-repeat;
+//  }
+  //about
+//  .page_about &,
+//  .page_work &{
+//    background: linear-gradient(0deg,transparent 0,rgba(0,0,0,.3) 100%), url(../img/kv_about.jpg) center center /cover no-repeat;
+//    border: none;
+//  }
+//  //magazine
+//  .page_magazine &{
+//    background: linear-gradient(0deg,transparent 0,rgba(0,0,0,.3) 100%), url(../img/kv_magazine.jpg) center center /cover no-repeat;
+//    border: none;
+//    @include mqSP{
+//      height: 230px;
+//    }
+//  }
+//  //news
+//  .page_news &{
+//    background: linear-gradient(0deg,transparent 0,rgba(0,0,0,.3) 100%), url(../img/kv_news.jpg) center center /cover no-repeat;
+//    border: none;
+//  }
+}
+
+.pageHead-bg{
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+
+//  background-position: center;
+//  background-size: cover;
+
+  @include mqNotSP{
+    height: 400px;
+  }
+  @include mqSP{
+    height: 190px;
+  } 
+  
+  //journeyArchives
+  .page_journeyArchives &{
+    background: linear-gradient(0deg,transparent 0,rgba(0,0,0,.3) 100%), url(../img/kv_journey.jpg) center center /cover no-repeat;
+  }
+  //about work
+  .page_about &,
+  .page_work &{
+    background: linear-gradient(0deg,transparent 0,rgba(0,0,0,.3) 100%), url(../img/kv_about.jpg) center center /cover no-repeat;
+    border: none;
+  }
+  //magazine
+  .page_magazine &{
+    background: linear-gradient(0deg,transparent 0,rgba(0,0,0,.3) 100%), url(../img/kv_magazine.jpg) center center /cover no-repeat;
+    border: none;
+    @include mqSP{
+      height: 230px;
+    }
+  }
+  //news
+  .page_news &{
+    background: linear-gradient(0deg,transparent 0,rgba(0,0,0,.3) 100%), url(../img/kv_news.jpg) center center /cover no-repeat;
+    border: none;
+  }
+}
+
+
+.pageHead-inner{
+  margin: 0 auto;
+  @include mqNotSP{
+    width: 610px;
+    margin-top: 108px;
+  }
+  @include mqSP{
+    width: 80%;
+  }
+  
+  .page_magazine &,
+  .page_news &,
+  .page_about &,
+  .page_journeyArchives &,
+  .page_work &{
+    @include mqNotSP{
+      
+    }
+    @include mqSP{
+      margin-top: 58px;
+    }
+  }
+}

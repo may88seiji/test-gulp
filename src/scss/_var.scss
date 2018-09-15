@@ -1,0 +1,91 @@
+$type: normal;
+
+/* -------------
+  Colors
+------------- */
+//白抜きのテキスト、コンテンツ背景等に使用。
+$c_w: #fff;
+$c_w02: rgba(255,255,255,.3);
+//本文、見出し、footerの背景等に使用。
+$c_k: #333;
+$c_k02: #000;
+//テキストリンク、footer背景、カレント背景等に使用。
+$c_orange: #ed9026;
+
+$c_gray01: #ebe9e4;
+$c_gray02: #ccc;
+//コンテンツ背景等に使用。
+$c_gray03: #f0efeb;
+//罫線、ボタン/スクロールバー背景等に使用。
+$c_gray04: #e2e0da;
+
+$c_gray05: #e3e1dc;
+
+$c_gray06: #d5d2c9;
+
+//red
+$c_red: #FF0000;
+
+/* -------------
+  width
+------------- */
+$w_PC-inner: 980;
+$w_SP-padding: 15;
+
+/* -------------
+  transition-duration
+------------- */
+$tr_speed: 0.3s;
+$tr_gnav: all 0.3s ease-in-out;
+
+/* -------------
+  transition-opacity
+------------- */
+$tr_opacity: 0.7;
+
+/* -------------
+  transition-easing
+------------- */
+$tr_easing: cubic-bezier(.4,0,.2,1);
+
+@mixin transition {
+  transition-duration: $tr_speed;
+  transition-timing-function: $tr_easing;
+}
+
+/* -------------
+  box-shadow
+------------- */
+$bs_standard: 0 0 2px rgba(#000,0.1); 
+
+/* -------------
+  line-height
+------------- */
+@mixin lineHeight-std {
+  line-height: 1.5;
+}
+
+@mixin lineHeight-wide {
+  line-height: 1.75;
+}
+
+
+/* -------------
+z-index
+------------- */
+$header: 1000;
+$l-header:10;
+$l-container:0;
+$l-gnav: 1000;
+$breadcrumb: 1;
+$gnav-inner: 1000;
+$top-complement_box-img: 1;
+$more: 10;
+$header_sp: -1;
+$top-kv-inner: 900;
+$journeySingle-recommended-top: 100;
+$refineSearch-filter: 10;
+$opening: 2000;
+$opening-inner: 2001;
+$opening-white: 2002;
+

@@ -1,0 +1,80 @@
+.text_lead{
+  @include mqNotSP{
+    
+  }
+  @include mqSP{
+  
+  }
+  
+  /* ----------------------------
+  * top
+  * -------------------------- */
+  .top-kv &{
+    color: $c_w;
+    opacity: .75;
+    @include mqNotSP{
+      font-size: 16px;
+      line-height: 1.5;
+      text-align: center;
+    }
+    @include mqSP{
+      font-size: 14px;
+      line-height: 1.5;
+      text-align: center;
+    }
+  }
+  .top-secondary_text &{
+    @include mqNotSP{
+      font-size: 14px;
+      color: $c_w;
+      opacity: .75;
+      margin-bottom: 25px;
+    }
+    @include mqSP{
+      font-size: 13px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* ----------------------------
+  * pageHead
+  * -------------------------- */
+  .pageHead &{
+    color: $c_w;
+    opacity: .75;
+    text-align: center;
+    @include mqNotSP{
+      font-size: 16px;
+    }
+    @include mqSP{
+      font-size: 13px;
+      text-align: center;
+      line-height: 1.2;
+    }
+  }
+  
+  /* ----------------------------
+  * journeySingle
+  * -------------------------- */
+  .journeySingle-kv &{
+    color: $c_w;
+    opacity: .75;
+    @include mqNotSP{
+      font-size: 16px;
+    }
+    @include mqSP{
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+  .journeySingle-introduction-middleText &{
+    @include mqNotSP{
+      text-align: center;
+      font-size: 14px;
+    }
+    @include mqSP{
+      font-size: 13px;
+    }
+  }
+}

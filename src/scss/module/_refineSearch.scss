@@ -1,0 +1,408 @@
+.hidden{display: none;}
+
+/* ----------------------------
+* common
+* -------------------------- */
+
+.refineSearch-inner{
+  display: flex;
+  @include mqNotSP{
+    width: calc-vw(1080,1280);
+    margin: 0 auto;
+    max-width: 1080px;
+    justify-content: flex-start;
+    > div{
+      &:first-child {
+        margin-right: auto;
+      }
+    }
+  }
+  @include mqSP{
+    flex-flow: column;
+    margin: 0 auto;
+  }
+}
+
+.refineSearch-filter,
+.refineSearch-search{
+  @include mqNotSP{
+    background-color: $c_gray03;
+    height: 60px;
+    width: calc-vw(440,1280);
+    max-width: 440px;
+  }
+  @include mqSP{
+    background-color: $c_gray03;
+    height: 46px;
+    width: calc-vw(280,320);
+  }
+}
+
+/* ----------------------------
+* result
+* -------------------------- */
+.refineSearch-result{
+  @include mqNotSP{
+    display: flex;
+    align-items: center;
+  }
+  @include mqSP{
+    order:3;
+    text-align: center;
+  }
+}
+
+.refineSearch-result-inner{
+  @include f_lato;
+  border-bottom: 2px solid #000;
+  line-height: 1;
+  @include mqNotSP{
+    font-size: 18px;
+  }
+  @include mqSP{
+    font-size: 14px;
+    width: 100%;
+    display: inline;
+  }
+  span{
+    font-weight: 900;
+    @include mqNotSP{
+      font-size: 40px;
+      margin-right: 6px;
+    }
+    @include mqSP{
+      font-size: 30px;
+      margin-right: 4px;
+    }
+  }
+}
+
+/* ----------------------------
+* search
+* -------------------------- */
+.refineSearch-search{
+  display: flex;
+  align-items: center;
+  position: relative;
+  @include mqNotSP{
+    margin-left: 10px;
+  }
+  @include mqSP{
+    order:1;
+    background-color: $c_gray03;
+    margin-bottom: 10px;
+  }
+  
+  input{
+    @include mqNotSP{
+      font-size: 14px;
+    }
+    @include mqSP{
+    
+    }
+  }
+}
+
+.refineSearch-search-inner{
+  height: 100%;
+  cursor: text;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include mqNotSP{
+    width: calc(100% - 60px);
+  }
+  @include mqSP{
+    width: calc(100% - 46px);
+    border-radius: 0;
+  }
+  i{
+    font-weight: bold;
+    @include mqNotSP{
+      font-size: 20px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    @include mqSP{
+      font-size: 18px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+  }
+  
+  input{
+    background-color: $c_gray03;
+    border: inherit;
+    display: inline-block;
+    @include mqNotSP{
+      height: 26px;
+      font-size: 14px;
+      width: calc(100% - 45px);
+    }
+    @include mqSP{
+      font-size: 13px;
+      height: 26px;
+      width: calc(100% - 46px);
+    }
+  }
+  input::-webkit-input-placeholder{
+    color: #d4d2c9;
+  }
+  input::-moz-placeholder{
+    color: #d4d2c9;
+  }
+  input:-ms-input-placeholder{
+    color: #d4d2c9;
+  }
+  input:focus{
+    outline: 0;
+  }
+}
+
+.refineSearch-search-btn{
+  position: absolute;
+  right: 0;
+  background-color: $c_gray04;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include mqNotSP{
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: $tr_speed;
+
+    &:hover {
+      background-color: $c_w;
+    }
+  }
+  @include mqSP{
+    height: 46px;
+    width: 46px;
+  }
+
+  i{
+    font-weight: bold;
+    @include mqNotSP{
+      font-size: 20px;
+    }
+    @include mqSP{
+      font-size: 16px;
+    }
+  }
+}
+
+/* ----------------------------
+* filter
+* -------------------------- */
+.refineSearch-filter{
+  position: relative;
+  z-index: $refineSearch-filter;
+  cursor: pointer;
+
+  @include mqNotSP{
+    
+  }
+  @include mqSP{
+    order:1;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  i{
+    @include mqNotSP{
+      font-size: 20px;
+      margin-right: 16px;
+    }
+    @include mqSP{
+      font-size: 20px;
+      margin-right: 12px;
+    }
+  }
+  
+  span{
+    line-height: 2.2;
+    vertical-align: bottom;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inline-block;
+    @include mqNotSP{
+      width: calc-vw(310,1280);
+    }
+    @include mqSP{
+      width: calc-vw(180,320);
+    }
+  }
+}
+
+.refineSearch-filter-top{
+  display: flex;
+  align-items: center;
+  position: relative;
+  @include mqNotSP{
+    width: 100%;
+    height: 100%;
+    transition: $tr_speed;
+    &:hover {
+      background-color: $c_gray04;
+    }
+  }
+  @include mqSP{
+    width: 100%;
+  }
+  
+  &::after {
+    @include icofont;
+    content: "\e911";
+    position: absolute;
+    right: 19px;
+    top: 50%;
+    transform: translateY(-50%) scale(0.8);
+    font-size: 10px;
+    transition: $tr_speed;
+  }
+  &.is-open{
+    &::after {
+      content: "\e910";
+    }
+  }
+}
+
+.refineSearch-filter-top-inner{
+  display: flex;
+  align-items: center;
+  @include mqNotSP{
+    margin-left: 20px;
+  }
+  @include mqSP{
+    margin-left: 15px;
+  }
+}
+
+.refineSearch-filter-bottom{
+  position: absolute;
+  width: 100%;
+
+  background-color: $c_w;
+  display: none;
+
+  
+  &.is-open{
+    height: auto;
+  }
+  
+  @include mqNotSP{
+    top: 60px;
+  }
+  @include mqSP{
+    top: 46px;
+  }
+}
+
+.refineSearch-filter-bottom-inner{
+  @include mqNotSP{
+    height: 100%;
+  }
+  @include mqSP{
+    height: 100%;
+  }
+  
+  li{
+    @include mqNotSP{
+      transition: $tr_speed;
+    }
+    @include mqSP{
+      transition: $tr_speed;
+    }
+    &:not(:last-child) {
+      label{
+        @include mqNotSP{
+          margin-bottom: -2px;
+        }
+        @include mqSP{
+          margin-bottom: -2px;
+        }
+      }
+      &::after {
+        content: "";
+        border-bottom: 1px solid $c_gray03;
+        width: 90%;
+        margin: 0 auto;
+        height: 1px;
+        position: absolute;
+        left: 0;
+        right: 0;
+      }
+    }
+
+    > div {
+
+
+      @include mqNotSP{
+        
+      }
+      @include mqSP{
+
+      }
+    }
+    
+    input{
+      display: none;
+    }
+    input:checked + label{
+      &::after {
+        color: $c_orange;
+      }
+    }
+    label.selected{
+      &::after {
+        color: $c_orange !important;
+      }
+    }
+    
+    label{
+      position: relative;
+      @include mqNotSP{
+        padding-left: 60px;
+        display: block;
+        height: 46px;
+        cursor: pointer;
+        line-height: 45px;
+        width: calc(100% - 60px);
+      }
+      @include mqSP{
+        padding-left: 60px;
+        display: block;
+        height: 40px;
+        cursor: pointer;
+        line-height: 2.8;
+        width: calc(100% - 60px);
+      }
+      &::after {
+        content: "\e905";
+        @include icofont;
+        position: absolute;
+        top: 50%;
+        left: 28px;
+        font-size: 12px;
+        transform: translateY(-50%);
+        color: $c_gray04;
+        transition: $tr_speed;
+      }
+    }
+    
+    //hover
+    &:hover {
+      background-color: $c_gray03;
+      label{
+        &::after {
+          color: $c_k;
+        }
+      }
+    }
+
+  }
+}

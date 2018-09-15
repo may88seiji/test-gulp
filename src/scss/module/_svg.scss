@@ -1,0 +1,12 @@
+/* ----------------------------
+* logo
+* -------------------------- */
+.logo{
+  @include mqNotSP{
+//    height: 171px;
+//    width: 164px;
+  }
+  @include mqSP{
+  
+  }
+}

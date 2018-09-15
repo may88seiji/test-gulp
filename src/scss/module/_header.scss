@@ -1,0 +1,734 @@
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  font-size: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: $header;
+  @include mqNotSP{
+    height: 100px;
+    &.is-active {
+      height: 60px;
+      background: $c_w;
+    }
+  }
+
+  //left
+  .left {
+    overflow: hidden;
+    padding: 0 0 0 30px;
+    margin: 10px 30px 0 20px;
+    @include mqSP{
+      margin: 10px 10px 0 15px;
+    }
+    
+    .left-items{
+      @include mqTB{
+        display: none !important;
+      }
+      @include mqSP{
+        display: none !important;
+      }
+    }
+  }
+  &.is-active .left {
+    @include mqPC{
+      margin: 0 30px 0 20px;
+    }
+  }
+  .left-items > li {
+    display: inline-block;
+    font-size: 14px;
+    @include f_BowlbyOne;
+    color: $c_w;
+    line-height: 100px;
+    letter-spacing: 0.05em;
+    margin: 0 22px 0 0;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    
+    > span{
+      opacity: .3;
+      pointer-events: none;
+    }
+    
+    > a{
+      @include mqNotSP{
+        height: 100%;
+        display: inline-block;
+      }
+      
+      &::after {
+        @include mqNotSP{
+          content: "";
+          transition: all 0.3s ease-in-out;
+          display: block;
+          position: absolute;
+          bottom: 1px;
+          width: 100%;
+          height: 0;
+          z-index: 100;
+        }
+      }
+      
+      //hover
+      &:hover {
+        &::after {
+          @include mqNotSP{
+            bottom: 1px;
+            height: 6px;
+            background: $c_w;
+          }
+          .is-reversed &{
+            @include mqNotSP{
+//              bottom: 0px;
+              height: 6px;
+              background: $c_k;
+            }
+          }
+        }
+      }
+    }
+    &.is-current{
+      @include mqNotSP{
+//        pointer-events: none;
+      }
+      @include mqSP{
+      
+      }
+    }
+    
+  }
+  &.is-active .left-items > li {
+    color: #333;
+    line-height: 60px;
+    
+    span{
+      opacity: .3;
+      pointer-events: none;
+    }
+  }
+  .left .is-current::after {
+    @include mqPC{
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 1px;
+      width: 100%;
+      height: 6px;
+      background: $c_w;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  &.is-active .left .is-current::after {
+    @include mqPC{
+      bottom: 0px;
+      background: $c_k;
+    }
+  }
+
+  //center
+  .center {
+    width: 118px;
+    height: 104px;
+    padding: 10px 0 0;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    @include mqTB{
+      width: 98px;
+    }
+    @include mqSP{
+      height: 60px;
+      width: 60px;
+      padding-top: 0px;
+      margin-top: 1px;
+    }
+    
+    svg {
+      width: 120px;
+      fill: $c_w;
+      transition: all 0.3s ease-in-out;
+      @include mqTB{
+        width: 100px;
+      }
+      @include mqSP{
+        height: 60px;
+        width: 60px;
+      }
+    }
+    
+    &:hover {
+      @include mqNotSP{
+        opacity: .7;
+      }
+    }
+  }
+  &.is-active .center {
+    .st0{
+      fill: $c_k;
+      transition: all .3s ease-in-out;
+    }
+    @include mqNotSP{
+      padding: 0;
+      svg {
+        width: 78px;
+        fill: $c_k;
+      }
+    }
+  
+  }
+
+  //right
+  .right {
+    margin: 10px 20px 0 30px;
+    padding: 0 30px 0 0;
+    text-align: right;
+    @include mqSP{
+      margin: 10px 15px 0 10px;
+    }
+    
+    .right-items{
+      @include mqTB{
+        display: none !important;
+      }
+      @include mqSP{
+        display: none !important;
+      }
+    }
+    
+    .gnav-language{
+      @include mqTB{
+        display: none !important;
+      }
+      @include mqSP{
+        display: none !important;
+      }
+    }
+    
+  }
+  
+  &.is-active .right {
+    @include mqPC{
+      margin: 0 20px 0 30px;
+    }
+  }
+  .right > ul {
+    margin: 0 44px 0 0;
+    position: relative;
+    display: inline-block;
+    li{
+//      &:first-child {
+//        a{
+//          &:before {
+//            content: "COMPANY";
+//            position: absolute;
+//            top: 42px;
+//            left: -106px;
+//            display: block;
+//            font-family: 'Lato', sans-serif;
+//            font-size: 12px;
+//            font-weight: 900;
+//            color: $c_w;
+//            letter-spacing: 1px;
+//            transition: all 0.3s ease-in-out;
+//            @include mqNotSP{
+//              line-height: 1.4;
+//            }
+//          }
+//        }
+//      }
+    }
+
+  }
+//  &.is-active .right > ul li a{
+//    &:first-child {
+//      &::before {
+//        top: 23px;
+//        color: #333;
+//      }
+//    }
+//  }
+  .right > ul:after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: $c_w;
+    position: absolute;
+    top: 49px;
+    left: 75px;
+    transition: all 0.3s ease-in-out;
+  }
+  &.is-active .right > ul:after {
+    background: #333;
+    top: 30px;
+  }
+  .right-items li {
+    display: inline-block;
+    color: $c_w;
+    @include f_lato;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 100px;
+    transition: all 0.3s ease-in-out;
+    
+    &:first-child {
+      a{
+        @include mqNotSP{
+          font-weight: 900;
+          margin-right: 36px;
+        }
+      }
+    }
+    
+    &:not(:first-child) {
+      a{
+        &:hover {
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+    
+    a{
+      @include mqNotSP{
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 0px;
+          border-bottom: 1px solid $c_w;
+          transition: $tr_gnav;
+        }
+        .is-reversed &{
+          &::after {
+            border-bottom: 1px solid $c_k;
+          }
+        }
+        .is-active &{
+          &::after {
+            border-bottom: 1px solid $c_k;
+          }
+        }
+      }
+    }
+  }
+  
+  &.is-active .right-items li {
+    color: #333;
+    line-height: 60px;
+    a{
+      &::after {
+        border-bottom: 1px solid $c_k;
+      }
+    }
+  }
+  .right >div {
+    display: inline-block;
+    position: relative;
+    display: flex;
+    @include mqPC{
+      display: inline-block;
+    }
+    @include mqTB{
+      margin-top: 14px;
+    }
+    @include mqSP{
+      
+    }
+    i {
+      font-size: 21px;
+      color: $c_w;
+      line-height: 1.4;
+      position: absolute;
+      bottom: -10px;
+      right: 0;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        @include mqNotSP{
+          opacity: .7;
+        }
+      }
+    }
+  }
+  &.is-active {
+    .gnav-trigger{
+      @include mqTB{
+        margin-top: -5px;
+      }
+    }
+  }
+  &.is-active .right div i {
+    color: #333;
+    bottom: -10px;
+  }
+  
+  //共通
+  .left,
+  .right{
+    display: inline-block;
+    width: calc(50% - 110px);
+    height: 100px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    vertical-align: top;
+    transition: all 0.3s ease-in-out;
+    @include mqSP{
+
+    }
+    @include mqTB{
+      width: calc(50% - 100px);
+      height: 80px;
+      padding: 0;
+    }
+    @include mqSP{
+      width: calc(50% - 56px);
+      height: 50px;
+      margin-top: 5px;
+      padding: 0;
+    }
+  }
+  &.is-active .right,
+  &.is-active .left{
+    @include mqNotSP{
+      border-bottom: none;
+      height: 60px;
+    }
+    @include mqSP{
+
+    }
+  }
+  
+  &.is-open .right,
+  &.is-open .left{
+    @include mqSP{
+      border-bottom: 1px solid $c_gray04;
+    }
+  }
+  
+  //reversed
+  .is-reversed &{
+    background-color: $c_w;
+    @include mqPC{
+      height: 109px;
+    }
+    @include mqTB{
+      height: 90px;
+    }
+    @include mqSP{
+    
+    }
+    .st0{
+      fill: $c_k;
+      transition: all .3s ease-in-out;
+    }
+    
+    .left .is-current::after {
+      @include mqPC{
+        background: $c_k;
+      }
+    }
+    
+    .left-items>li,
+    .right-items li{
+      color: $c_k;
+      @include mqNotSP{
+        
+      }
+      @include mqSP{
+      
+      }
+    }
+    
+    .right>ul:before{
+      color: $c_k;
+    }
+    .right>ul:after{
+      background-color: $c_k;
+    }
+    
+    &.is-active{
+      @include mqNotSP{
+        height: 60px;
+      }
+      @include mqSP{
+      
+      }
+    }
+    .icon-language{
+      color: $c_k;
+      @include mqNotSP{
+        
+      }
+      @include mqSP{
+      
+      }
+    }
+  }
+
+  
+}
+
+/* ----------------------------
+* gnav-inner_sp
+* -------------------------- */
+.header_sp{
+  @include mqTB{
+    position: absolute;
+    width: 100%;
+    background-color: $c_gray03;
+    transition: .5s;
+    z-index: $header_sp;
+    transform: skewY(10deg);
+    
+    height: calc(100vh + 200px);
+    top: calc(-100vh - 50vh);
+    
+    opacity: 0;
+    pointer-events: none;
+    
+    //animation
+    &.is-open{
+      opacity: 1;
+      pointer-events: inherit;
+      top: -90px;
+    }
+    
+  }
+  @include mqSP{
+    position: absolute;
+    width: 100%;
+    background-color: $c_gray03;
+    transition: .5s;
+    z-index: $header_sp;
+    transform: skewY(10deg);
+
+    height: calc(100vh + 150px);
+    top: calc(-100vh -  40vh);
+    
+    opacity: 0;
+    pointer-events: none;
+    
+    //animation
+    &.is-open{
+      opacity: 1;
+      pointer-events: inherit;
+      top: -60px;
+//      display: flex;
+//      align-items: center;
+    }
+  }
+  
+//  @include mqNotPC{
+//    position: absolute;
+//    -    top: calc(-100vh - 120px);
+//    +    top: calc(-100vh - 40vh);
+//    width: 100%;
+//    background-color: $c_gray03;
+//    transition: .5s;
+//    z-index: $header_sp;
+//    -    height: calc(100vh + 80px);
+//    +    height: calc(100vh + 30vh);
+//    transform: skewY(10deg);
+//    &.is-open{
+//      -      top: -40px;
+//        +      top: -8vh;
+//      }
+//    }
+//    +  @include mqTB{
+//      +    top: calc(-100vh - 20vh);
+//      +  }
+//  }
+
+}
+
+.header_sp-inner{
+  @include mqTB{
+    transform: skewY(-10deg);
+    margin-top: 220px;
+  }
+  @include mqSP{
+    transform: skewY(-10deg);
+    color: $c_w;
+    border-bottom: 1px solid transparent;
+    box-sizing: border-box;
+    padding-bottom: 20px;
+    display: flex;
+    flex-flow: column;
+    
+    margin-top: 40px;
+    padding-top: 100px;
+    overflow: scroll;
+    height: 100vh;
+//    width: 100%;
+//    margin: 0 10px;
+//    height: calc(100vh + 40px);
+    padding-bottom: 55px;
+  }
+
+  ul{
+  }
+}
+
+.header_sp-top,
+.header_sp-middle{
+  color: $c_k;
+}
+
+.header_sp-top{
+  @include f_BowlbyOne;
+  font-size: 24px;
+  ul{
+    text-align: center;
+    margin: 42px 0 40px;
+  }
+  li{
+    display: block;
+    &:not(:last-child) {
+      margin-bottom: 22px;
+    }
+    
+    span{
+      opacity: .3;
+      pointer-events: none;
+    }
+    
+    a{
+      display: inline-block;
+    }
+    &.is-current{
+      a{
+        border-bottom: 4px solid $c_k;
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.header_sp-middle{
+  @include f_lato;
+  font-size: 14px;
+  border-top: 1px solid $c_gray04;
+  border-bottom: 1px solid $c_gray04;
+  
+  box-sizing: border-box;
+  margin: 0 10px;
+
+  ul{
+    margin: 0 auto;
+    width: 215px;
+    margin-top: 64px;
+    margin-bottom: 30px;
+    position: relative;
+//    &::before {
+//      @include f_lato;
+//      content: "COMPANY";
+//      position: absolute;
+//      color: $c_k;
+//      font-weight: 900;
+//      font-size: 14px;
+//      top: -40px;
+//      left: 0;
+//      right: 0;
+//      text-align: center;
+//    }
+    &::after {
+      content: "";
+      height: 1px;
+      border-top: 1px solid $c_k;
+      position: absolute;
+      width: 20px;
+      top: -10px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+  li{
+    display: inline-block;
+    
+    &:first-child {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-weight: 900;
+    }
+    &:nth-child(2),
+    &:nth-child(3){
+      margin-right: 10px;
+      position: relative;
+    }
+    &:not(:first-child) {
+      margin-left: 6px;
+    }
+    
+    &:nth-child(2),
+    &:nth-child(3){
+      &::after {
+        content: "/";
+        position: absolute;
+        color: $c_k;
+        right: -14px;
+        top: 0;
+
+        @include mqNotSP{
+        }
+        @include mqSP{
+
+        }
+      }
+    }
+  }
+}
+
+.header_sp-bottom{
+  color: $c_k;
+  font-size: 11px;
+  ul{
+    margin: 0 auto;
+    width: 192px;
+    margin-top: 26px;
+    margin-bottom: 16px;
+    position: relative;
+  }
+  li{
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: 10px;
+      position: relative;
+    }
+    &:not(:first-child) {
+      margin-left: 6px;
+    }
+    
+    &:not(:last-child) {
+      &::after {
+        content: "/";
+        position: absolute;
+        color: $c_k;
+        right: -12px;
+        top: 0;
+
+        @include mqNotSP{
+        }
+        @include mqSP{
+
+        }
+      }
+    }
+  }
+  
+  .header_insta{
+    @include mqNotPC{
+      text-align: center;
+      font-size: 23px;
+    }
+  }
+}

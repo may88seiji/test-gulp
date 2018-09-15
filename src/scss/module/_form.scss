@@ -1,0 +1,385 @@
+.form-description,
+.form-current{
+  @include f_lato;
+  border-bottom: 1px solid #000;
+  @include mqNotSP{
+    font-size: 14px;
+    text-align: center;
+    padding-bottom: 32px;
+  }
+  @include mqSP{
+    font-size: 13px;
+  }
+  
+  ul{
+    @include mqNotSP{
+      
+    }
+    @include mqSP{
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+  
+  li{
+    display: inline-block;
+    color: $c_gray04;
+    &.is-current{
+      color: $c_k;
+      font-weight: 900;
+    }
+    
+    &:not(:last-child) {
+      margin-right: 25px;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        border-top: 1px solid #e2e0da;
+        width: 8px;
+        right: -22px;
+        top: 50%;
+        transform: translate(-50%);
+      }
+    }
+  }
+}
+
+.form-item{
+  border-bottom: 1px solid $c_gray03;
+  display: flex;
+  @include mqNotSP{
+    flex-flow: row;
+  }
+  @include mqSP{
+    flex-flow: column;
+  }
+  
+  //共通
+  dd,dt{
+    @include mqNotSP{
+      width: calc(100% - 130px);
+      margin-top: 22px;
+      margin-bottom: 16px;
+    }
+    @include mqSP{
+      margin-top: 8px;
+    }
+  }
+  
+  dt{
+    @include mqNotSP{
+      width: 130px;
+    }
+    @include mqSP{
+    
+    }
+  }
+  
+  dd{
+    @include mqNotSP{
+      
+    }
+    @include mqSP{
+      margin-bottom: 12px;
+    }
+
+  }
+  
+  input{
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+    @include mqNotSP{
+      margin-right: 10px;
+      cursor: text;
+    }
+    @include mqSP{
+      margin-bottom: 12px;
+    }
+  }
+  .form-text::-webkit-input-placeholder{
+    color: $c_gray04;
+  }
+  .form-text::-moz-placeholder{
+    color: $c_gray04;
+  }
+  .form-text:-ms-input-placeholder{
+    color: $c_gray04;
+  }
+  .memo::-webkit-input-placeholder{
+    color: $c_gray04;
+  }
+  .memo::-moz-placeholder{
+    color: $c_gray04;
+  }
+  .memo:-ms-input-placeholder{
+    color: $c_gray04;
+  }
+  input[type="email"]{
+    width: 100%;
+    @include mqNotSP{
+//      width: calc(100% - 128px);
+    }
+    @include mqSP{
+
+    }
+  }
+  
+  labe{
+    cursor: pointer;
+  }
+  
+  textarea{
+    width: 100%;
+    @include mqNotSP{
+      font-size: 14px;
+    }
+    @include mqSP{
+      font-size: 14px;
+    }
+    /* ----------------------------
+    * scrollbar
+    * -------------------------- */
+    @include scrollbar;
+  }
+}
+
+.form-item-wrapName{
+  display: flex;
+  @include mqNotSP{
+    justify-content: space-between;
+  }
+  @include mqSP{
+    flex-flow: column;
+  }
+  dl{
+    @include mqNotSP{
+      width: calc(50% - 4px);
+    }
+    @include mqSP{
+    
+    }
+    .page_confirm &{
+      width: 100%;
+    }
+  }
+  
+  .page_confirm &{
+    @include mqNotSP{
+      flex-flow: column;
+      justify-content: inherit;
+    }
+    @include mqSP{
+    
+    }
+  }
+}
+
+.form-item-wrapRadio{
+  .form-item_radio{
+    display: inline-block;
+    @include mqNotSP{
+      margin-right: 26px;
+    }
+    @include mqSP{
+
+    }
+  }
+  
+  .inputRadio{
+//    opacity: 0;
+    display: none;
+  }
+  
+  label{
+    position: relative;
+    margin-left: 20px;
+    cursor: pointer;
+    @include mqNotSP{
+      
+    }
+    @include mqSP{
+      margin-right: 18px;
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: -25px;
+      width: 10px;
+      height: 10px;
+      border: 2px solid $c_gray04;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      @include mqNotSP{
+        transition: $tr_speed;
+      }
+      @include mqSP{
+        left: -20px;
+      }
+    }
+  }
+  input[type="radio"]:checked + label{
+    &:hover {
+      &::before {
+        background-color: $c_k02;
+        border: 2px solid $c_k02;
+      }
+    }
+    &::before {
+      background-color: $c_k02;
+      border: 2px solid $c_k02;
+    }
+  }
+  input[type="radio"] + label{
+    &:hover {
+      &::before {
+//        background-color: $c_k02;
+        border: 2px solid $c_k02;
+      }
+    }
+  }
+}
+
+.form-policy{
+  @include mqNotSP{
+
+  }
+  @include mqSP{
+  
+  }
+  dt{
+    @include mqNotSP{
+      margin-top: 22px;
+      margin-bottom: 10px;
+    }
+    @include mqSP{
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+  
+  dd{
+    overflow: scroll;
+    border: 1px solid $c_gray01;
+    height: 150px;
+    @include mqNotSP{
+      
+    }
+    @include mqSP{
+      margin-bottom: 18px;
+    }
+  }
+  .form-item-wrapPolicy{
+    box-sizing: border-box;
+    @include mqNotSP{
+      margin: 24px 30px;
+    }
+    @include mqSP{
+      margin: 12px 18px;
+    }
+  }
+  /* ----------------------------
+  * scrollbar
+  * -------------------------- */
+  @include scrollbar;
+}
+
+.wrap_privacy_policy{
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  @include mqNotSP{
+    margin-top: 34px;
+    font-size: 14px;
+    margin: 34px auto 15px;
+    width: 300px;
+  }
+  @include mqSP{
+    margin: 15px auto;
+    width: 260px;
+  }
+  input{
+    display: none;
+  }
+  label{
+    cursor: pointer;
+    position: relative;
+    
+    @include mqNotSP{
+      width: 270px;
+      margin-left: 30px;
+    }
+    @include mqSP{
+      font-size: 12px;
+      width: 230px;
+      margin-left: 30px;
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: -20px;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 10px;
+      border: 2px solid $c_gray04;
+      background-color: $c_w;
+      @include mqSP{
+        left: -23px;
+      }
+    }
+  }
+  input[type="checkbox"]:checked + label{
+    &::after {
+      @include icofont;
+      position: absolute;
+      content: "\e905";
+      top: 50%;
+      left: -20px;
+      transform: translateY(-50%);
+      @include mqSP{
+        left: -22px;
+      }
+    }
+  }
+  
+  .page_confirm &,
+  .page_contact &{
+    @include mqNotSP{
+      width: 310px;
+      margin: 34px auto 15px;
+    }
+    @include mqSP{
+    
+    }
+  }
+}
+
+p{
+  .page_complete &{
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+}
+
+/* ----------------------------
+* 
+* -------------------------- */
+
+.form-item,
+.wrap_privacy_policy{
+  .error{
+    color: $c_red;
+    display: inline-block;
+    @include mqNotSP{
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    @include mqSP{
+      margin-top: 6px;
+    }
+  }
+}

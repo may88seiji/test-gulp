@@ -1,0 +1,465 @@
+.wysiwyg{
+  @include mqNotSP{
+    
+  }
+  @include mqSP{
+  
+  }
+  
+  h1{
+    @include f_BowlbyOne;
+    @include mqNotSP{
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+    @include mqSP{
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+  }
+  
+  h2{
+    @include f_lato;
+    font-weight: 900;
+    
+    .page_post &{
+      @include mqNotSP{
+        font-size: 30px;
+        margin-bottom: 40px;
+        line-height: 1.25;
+        padding-left: 28px;
+        padding-bottom: 4px;
+        border-left: 6px solid $c_orange;
+      }
+      @include mqSP{
+        font-size: 20px;
+        margin-bottom: 16px;
+        line-height: 1.3;
+        padding-left: 14px;
+        border-left: 3px solid $c_orange;
+      }
+    }
+    
+    .page_page &{
+      position: relative;
+      @include mqNotSP{
+        font-size: 24px;
+        margin-bottom: 40px;
+        line-height: 1.3;
+        padding-left: 28px;
+      }
+      @include mqSP{
+        padding-left: 20px;
+        font-size: 18px;
+        margin-bottom: 10px;
+        line-height: 1.2;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        @include mqNotSP{
+          border-top: 4px solid $c_orange;
+          width: 20px;
+          top: 14px;
+        }
+        @include mqSP{
+          border-top: 2px solid $c_orange;
+          width: 12px;
+          top: 10px;
+        }
+      }
+    }
+  }
+  
+  h3{
+    @include f_lato;
+    font-weight: 900;
+    position: relative;
+    @include mqNotSP{
+      font-size: 24px;
+      margin-left: 30px;
+      margin-bottom: 24px;
+      line-height: 1.25;
+    }
+    @include mqSP{
+      font-size: 18px;
+      padding-left: 20px;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    .page_post &{
+
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 16px;
+      left: -32px;
+      border-top: 4px solid $c_orange;
+      transform: translateY(-50%);
+      @include mqNotSP{
+        width: 20px;
+      }
+      @include mqSP{
+        border-top: 2px solid $c_orange;
+        top: 10px;
+        left: 0;
+        width: 12px;
+      }
+    }
+  }
+  
+  h4{
+    @include f_lato;
+    color: $c_orange;
+    font-weight: 900;
+    @include mqNotSP{
+      font-size: 20px;
+      line-height: 1.25;
+    }
+    @include mqSP{
+      font-size: 16px;
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+  }
+  
+  hr{
+    border: none;
+    height: 1px;
+    background-color: $c_gray04;
+    @include mqNotSP{
+      margin-bottom: 40px;
+    }
+    @include mqSP{
+      margin-bottom: 15px;
+    }
+  }
+  
+  p{
+    @include mqNotSP{
+      margin-bottom: 36px;
+      font-size: 16px;
+    }
+    @include mqSP{
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+    
+    &:last-child {
+      margin-bottom: 0;
+      @include mqNotSP{
+        
+      }
+      @include mqSP{
+      
+      }
+    }
+    
+    img{
+      width: 100%;
+      height: 100%;
+      @include mqNotSP{
+//        margin-bottom: 80px;
+      }
+      @include mqSP{
+      
+      }
+    }
+  }
+  
+  ul{
+//    list-style-type: square;
+    @include mqNotSP{
+      font-size: 16px;
+      margin-bottom: 26px;
+    }
+    @include mqSP{
+      margin-bottom: 30px;
+    }
+    li{
+      position: relative;
+      @include mqNotSP{
+        margin-bottom: 10px;
+        margin-left: 26px;
+        line-height: 1.5;
+      }
+      @include mqSP{
+        margin-bottom: 10px;
+        margin-left: 18px;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        left: -26px;
+        top: 10px;
+        background-color: $c_orange;
+        @include mqNotSP{
+          width: 6px;
+          height: 6px;
+        }
+        @include mqSP{
+          left: -18px;
+
+          width: 6px;
+          height: 6px;
+        }
+      }
+    }
+  }
+  
+  ol{
+    counter-reset: number;
+    @include mqNotSP{
+      margin-bottom: 26px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    @include mqSP{
+      margin-bottom: 30px;
+
+    }
+    li{
+      position: relative;
+      @include mqNotSP{
+        margin-bottom: 10px;
+        margin-left: 26px;
+      }
+      @include mqSP{
+        margin-bottom: 5px;
+        margin-left: 20px;
+      }
+      &::before {
+        counter-increment: number;
+        content: counter(number) ".";
+        text-align: center;
+
+        font-weight: 700;
+        color: $c_orange;
+        position: absolute;
+        @include mqNotSP{
+          left: -26px;
+          top: 0px;
+          margin-right: 10px;
+        }
+        @include mqSP{
+          left: -20px;
+        }
+      }
+    }
+  }
+  
+  blockquote{
+    font-style: italic;
+    background-color: $c_gray04;
+    border: 1px solid transparent;
+    @include mqNotSP{
+      margin-top: 56px;
+      margin-bottom: 30px;
+    }
+    @include mqSP{
+      margin-bottom: 20px;
+    }
+    
+    > p{
+      box-sizing: border-box;
+      position: relative;
+
+      @include mqNotSP{
+        margin: 35px 50px;
+      }
+      @include mqSP{
+        margin: 25px 30px;
+      }
+      
+      &::before,
+      &::after{
+        @include icofont;
+        color: #cfcbc1;
+        font-size: 16px;
+        position: absolute;
+        @include mqSP{
+          font-size: 16px;
+        }
+      }
+      &::before {
+        content: "\e906";
+        @include mqNotSP{
+          left: -32px;
+          top: -20px;
+        }
+        @include mqSP{
+          top: -18px;
+          left: -18px;
+        }
+      }
+      &::after {
+        content: "\e907";
+        bottom: 0;
+        @include mqNotSP{
+          right: -32px;
+          bottom: -20px;
+        }
+        @include mqSP{
+          bottom: -17px;
+          right: -18px;
+        }
+      }
+    }
+  }
+  
+  a{
+    color: $c_orange;
+    border-bottom: 1px solid $c_orange;
+    transition: $tr_speed;
+    position: relative;
+    word-wrap: break-word;
+    @include mqNotSP{
+      font-size: 16px;
+    }
+    @include mqSP{
+      border-bottom: 1px solid $c_orange;
+    }
+    &:hover {
+      border-bottom: 1px solid transparent;
+    }
+  }
+  a[target="_blank"]{
+    position: relative;
+    &::after {
+      content: "\e90c";
+      @include icofont;
+      color: $c_orange;
+      position: absolute;
+      top: 50%;
+      right: -24px;;
+      transform: translateY(-50%);
+      @include mqNotSP{
+        font-size: 12px;
+      }
+      @include mqSP{
+      
+      }
+    }
+  }
+  
+  a[href$=".pdf"]{
+    position: relative;
+    &::after {
+      content: "\e90d";
+      @include icofont;
+      color: $c_orange;
+      position: absolute;
+      bottom: -2px;
+      right: -24px;
+      @include mqNotSP{
+        font-size: 18px;
+      }
+      @include mqSP{
+
+      }
+    }
+  }
+  
+  .wp-caption{
+    max-width: inherit !important;
+    position: relative;
+    @include mqNotSP{
+      margin-bottom: 80px;
+    }
+    @include mqSP{
+      margin-bottom: 36px;
+    }
+    img{
+      width: 100%;
+      height: 100%;
+      display: block;
+      @include mqNotSP{
+        
+      }
+      @include mqSP{
+      
+      }
+    }
+  }
+  
+  .wp-caption-text{
+    margin-bottom: 0;
+    position: absolute;
+    bottom: -1px;
+    background-color: rgba(241,241,237,.9);
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    @include mqNotSP{
+      padding: 10px;
+      font-size: 12px;
+      line-height: 1.25;
+    }
+    @include mqSP{
+      padding: 5px 4px;
+      font-size: 11px;
+      line-height: 1.2;
+    }
+  }
+
+  .youtube {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+
+    @include mqNotSP {
+      margin-bottom: 36px;
+    }
+    @include mqSP {
+      margin-bottom: 15px;
+    }
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  /* ----------------------------
+  * site privacy policy
+  * -------------------------- */
+  .page_page &{
+    @include mqNotSP{
+
+    }
+    @include mqSP{
+
+    }
+  }
+
+}
+
+.wysiwyg-inner{
+  @include mqNotSP{
+    width: 690px;
+    margin: 0 auto;
+  }
+  @include mqSP{
+  }
+  
+  /* ----------------------------
+  * site privacy policy
+  * -------------------------- */
+  .page_page &{
+    border-top: 1px solid $c_gray04;
+    @include mqNotSP{
+      padding-top: 40px;
+    }
+    @include mqSP{
+      padding-top: 20px;
+    }
+  }
+}

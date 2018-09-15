@@ -1,0 +1,51 @@
+.breadcrumb{
+  position: absolute;
+  top: 125px;
+  right: 45px;
+  background-color: transparent;
+  color: $c_w;
+  font-size: 10px;
+  z-index: $breadcrumb;
+  opacity: .75;
+  @include mqTB{
+    top:105px;
+    right: 25px;
+  }
+  li{
+    display: inline-block;
+    &:not(:last-child) {
+      &::after {
+        content: ">";
+        display: inline-block;
+        margin: 0 5px;
+      }
+    }
+    &:hover {
+      span{
+        border-bottom: 1px solid transparent;
+      }
+    }
+  }
+  a{
+    span{
+      border-bottom: 1px solid $c_w;
+      transition: $tr_speed;
+    }
+  }
+  
+  .is-reversed &{
+    color: #999;
+    opacity: 1;
+    a span{
+      border-bottom: 1px solid #999;
+      &:hover {
+        border-bottom: 1px solid transparent;
+      }
+    }
+//    &:hover {
+//      a span{
+//        border-bottom: 1px solid transparent;
+//      }
+//    }
+  }
+}

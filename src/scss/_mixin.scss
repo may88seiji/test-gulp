@@ -1,0 +1,220 @@
+/* -----------------
+@include MediaQuery
+----------------- */
+@mixin mqPC {
+  @media screen and (min-width: 981px){
+    @content;
+  }
+}
+
+@mixin mqTB {
+  @media screen and (min-width: 768px) and (max-width: 980px){
+    @content;
+  }
+}
+
+@mixin mqSP {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+//pc tb
+@mixin mqNotSP {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+//sp tb
+@mixin mqNotPC {
+  @media screen and (max-width: 980px) {
+    @content;
+  }
+}
+
+@mixin sp-inner {
+  width: 100%;
+  box-sizing: border-box;
+  padding-right: calc-vw(40);
+  padding-left: calc-vw(40);
+}
+
+/* -----------------
+@extend clearfix
+----------------- */
+%clearfix {
+  zoom: 1;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+/* -----------------
+icofont settings
+----------------- */
+@mixin icofont {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* -----------------
+bg-cover
+----------------- */
+@mixin bg-cover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+/* -----------------
+placeholder
+----------------- */
+@mixin placeholder {
+  &:placeholder-shown {
+      @content;
+  }
+  &::-webkit-input-placeholder {
+      @content;
+  }
+  &:-moz-placeholder {
+      opacity: 1;
+      @content;
+  }
+  &::-moz-placeholder {
+      opacity: 1;
+      @content;
+  }
+  &:-ms-input-placeholder {
+      @content;
+  }
+}
+
+/* -----------------
+sprite 
+----------------- */
+@mixin r-sprite-width($sprite) {
+  width: nth($sprite, 5)/2;
+}
+
+@mixin r-sprite-height($sprite) {
+  height: nth($sprite, 6)/2;
+}
+
+@mixin r-sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3)/2;
+  $sprite-offset-y: nth($sprite, 4)/2;
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin r-sprite-size($sprite) {
+  background-size: nth($sprite, 7)/2 nth($sprite, 8)/2;
+}
+
+@mixin r-sprite($sprite) {
+  @include sprite-image($sprite);
+  @include r-sprite-position($sprite);
+  @include r-sprite-width($sprite);
+  @include r-sprite-height($sprite);
+  @include r-sprite-size($sprite); 
+}
+
+
+/* -----------------
+calc-vw 
+----------------- */
+@function calc-vw($size, $viewport:640){
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+
+@mixin tr_smooth {
+  -webkit-backface-visibility:hidden;
+  backface-visibility:hidden;
+  overflow:hidden;
+}
+
+/* ----------------------------
+* border-box 20px sp
+* -------------------------- */
+@mixin border-box{
+  box-sizing: border-box;
+  margin: 0 20px;
+}
+
+/* ----------------------------
+* hover line animation
+* -------------------------- */
+//hover
+@mixin hover-lineAnimation{
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0px;
+    border-bottom: 1px solid $c_w;
+    transition: $tr_gnav;
+  }
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+/* ----------------------------
+* scroll
+* -------------------------- */
+@mixin scrollbar{
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 2px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: rgba(0,0,0,.5);
+    box-shadow: 0 0 1px rgba(255,255,255,.5);
+  }
+}
+
+/* ----------------------------
+* heading decroaation
+* -------------------------- */
+
+@mixin decoration{
+  //装飾 positon: relative を置くこと。
+  &::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-image: url(../img/title.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    @include mqNotSP{
+      width: 44px;
+      height: 10px;
+      bottom: -30px;
+    }
+    @include mqSP{
+      width: 22px;
+      height: 4px;
+      bottom: -12px;
+    }
+  }
+}

@@ -1,0 +1,89 @@
+.pagination_wrap{
+  display: flex;
+  justify-content: center;
+  @include mqNotSP{
+    margin-top: 80px;
+  }
+  @include mqSP{
+    margin-top: 40px;
+  }
+}
+
+.pagination{
+  display: flex;
+  flex-flow: row;
+  font-weight: bold;
+  @include mqNotSP{
+    font-size: 14px;
+  }
+  @include mqSP{
+    font-size: 12px;
+  }
+  
+  li{
+    @include mqNotSP{
+    }
+    @include mqSP{
+    
+    }
+  }
+  
+  a{
+    background-color: $c_gray04;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include mqNotSP{
+      width: 50px;
+      height: 50px;
+      margin: 0 10px;
+      transition: $tr_speed;
+    }
+    @include mqSP{
+      margin: 0 2px;
+      width: 36px;
+      height: 36px;
+    }
+    
+    &:hover {
+       @include mqNotSP{
+         color: $c_k;
+         background-color: $c_w;
+       }
+    }
+  }
+  
+  .current{
+    color: $c_w;
+    background-color: $c_orange;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include mqNotSP{
+      margin: 0 10px;
+      width: 50px;
+      height: 50px;
+    }
+    @include mqSP{
+      margin: 0 2px;
+      width: 36px;
+      height: 36px;
+    }
+  }
+  .dots{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include mqNotSP{
+      margin: 0 10px;
+    }
+    @include mqSP{
+      margin: 0 2px;
+    }
+  }
+}

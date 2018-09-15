@@ -1,0 +1,548 @@
+.btn_common{
+  @include mqNotSP{
+    clip-path: polygon(0 10px,10px 0,200px 0,200px 49px,0 49px);
+    height: 48px;
+  }
+  @include mqSP{
+  
+  }
+
+  a,button{
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: $c_w;
+    font-size: 12px;
+    letter-spacing: .5px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    line-height: 48px;
+    z-index: 2;
+    overflow: hidden;
+    @include mqNotSP{
+      height: 48px;
+    }
+    @include mqSP{
+      height: 40px;
+      margin: 0 auto;
+      width: 180px;
+      display: block;
+    }
+    
+    use{
+      @include mqNotSP{
+        stroke: $c_w;
+      }
+      @include mqSP{
+        stroke: $c_k;
+      }
+    }
+    &::before {
+      content:"";
+      display: block;
+      position: absolute;
+      top: 21px;
+      left: 54px;
+      width: 0;
+      height: 0;
+      z-index: 2;
+      border-style: solid;
+      border-width: 4px 0 0 4px;
+      -webkit-transition: all .2s .2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+      transition: all .2s .2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+      @include mqNotSP{
+        border-color: transparent transparent transparent $c_w;
+      }
+      @include mqSP{
+        top: 17px;
+        left: 44px;
+        width: 0;
+        height: 0;
+        z-index: 2;
+        border-style: solid;
+        border-width: 4px 0 0 4px;
+        border-color: transparent transparent transparent $c_k;
+      }
+    }
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 24px;
+      left: 45px;
+      width: 9px;
+      height: 1px;
+      -webkit-transition: all .2s .2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+      transition: all .2s .2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+      @include mqNotSP{
+        background: $c_w;
+      }
+      @include mqSP{
+        background: $c_k;
+        top: 20px;
+        left: 35px;
+        width: 9px;
+        height: 1px;
+      }
+    }
+    
+    //hover
+    @include mqNotSP{
+      &:hover {
+        .btn-svg-box{
+          left: -10px;
+          transform: skewX(0deg);
+        }
+        .label{
+          color: #333;
+          left: 80px;
+        }
+        &::before {
+          left: 59px;
+          border-color: transparent transparent transparent #333;
+        }
+        &::after {
+          left: 50px;
+          background: #333;
+        }
+      }
+    }
+  }
+  
+  .label{
+    -webkit-transition: all .2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    transition: all .2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    position: absolute;
+    top: 0;
+    left: 75px;
+    @include mqNotSP{
+      
+    }
+    @include mqSP{
+      color: $c_k;
+      top: 0;
+      left: 65px;
+      line-height: 40px;
+    }
+  }
+  
+  .btn-svg-box{
+    -webkit-transition: all .4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    transition: all .4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    width: 220px;
+    height: 48px;
+    background: #FFF;
+    position: absolute;
+    top: 0;
+    left: -270px;
+    transform:skewX(-10deg);
+    @include mqSP{
+      display: none;
+    }
+//    .reversed &{
+//      background: $c_k;
+//    }
+  }
+
+  //back to top reversed
+  &.reversed{
+    text-align: center;
+    @include mqNotSP{
+      width: 200px;
+      margin: 0 auto;
+    }
+    @include mqSP{
+    
+    }
+    a,button{
+      color: $c_k;
+      @include mqNotSP{
+
+      }
+      @include mqSP{
+      
+      }
+      .label{
+        @include mqNotSP{
+          transition: color .2s cubic-bezier(.55,.085,.68,.53), .6s;
+        }
+        @include mqSP{
+        
+        }
+      }
+      
+      use{
+        @include mqNotSP{
+          stroke: $c_k;
+        }
+        @include mqSP{
+          stroke: $c_k;
+        }
+      }
+      
+      &::before {
+        @include mqNotSP{
+          border-color: transparent transparent transparent $c_k;
+        }
+        @include mqSP{
+          border-color: transparent transparent transparent $c_k;
+        }
+      }
+      &::after {
+        @include mqNotSP{
+          background: $c_k;
+        }
+        @include mqSP{
+          background: $c_k;
+        }
+      }
+      //hover
+      @include mqNotSP{
+        &:hover {
+          .label{
+            color: $c_w;
+          }
+          &::before {
+            border-color: transparent transparent transparent $c_w;
+          }
+          &::after {
+            background: $c_w;
+          }
+        }
+      }
+    }
+    
+    .btn-svg-box{
+      background-color: $c_k;
+    }
+  }
+  
+  //getMoreInfo
+  &.getMoreInfo{
+    a{
+      @include mqSP{
+        width: 260px;
+      }
+    }
+  }
+  
+  //viewAll
+  &.viewAll{
+    @include mqNotSP{
+      display: none;
+    }
+    @include mqSP{
+      @include f_lato;
+      font-weight: 900;
+      font-size: 11px;
+      width: 180px;
+      margin: 0 auto;
+      a,button{
+        &::before,
+        &::after {
+          display: none;
+        }
+      }
+      i{
+        margin-right: 6px;
+        @include mqNotSP{
+          
+        }
+        @include mqSP{
+          font-size: 10px;
+        }
+      }
+      .label{
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+  
+}
+
+/* ----------------------------
+* btn_l
+* -------------------------- */
+.btn_l{
+  @include mqNotSP{
+    margin: 0 auto;
+    width: 360px;
+    clip-path: polygon(0 10px,10px 0,360px 0,360px 49px,0 49px);
+  }
+  @include mqSP{
+  
+  }
+  
+  a,button{
+    display: inline-block;
+    height: 48px;
+    position: relative;
+    text-decoration: none;
+    color: #333;
+    font-size: 12px;
+    letter-spacing: .5px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    line-height: 48px;
+    z-index: 2;
+    overflow: hidden;
+    
+    
+    &:hover {
+      @include mqNotSP{
+        .btn-svg-box{
+          left: -10px;
+          transform: skewX(0deg);
+        }
+        .label{
+          color: $c_w;
+        }
+        &::before {
+          left: 139px;
+          border-color: transparent transparent transparent #fff;
+        }
+        &::after {
+          left: 130px;
+          background: #fff;
+        }
+      }
+    }
+  }
+  
+  //arrow
+  &.arrow {
+    a,button{
+      &::before {
+        content:"";
+        display: block;
+        position: absolute;
+        top: 21px;
+        left: 134px;
+        width: 0;
+        height: 0;
+        z-index: 2;
+        border-style: solid;
+        border-width: 4px 0 0 4px;
+        -webkit-transition: all .2s .2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+        transition: all .2s .2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+        @include mqNotSP{
+          border-color: transparent transparent transparent $c_k;
+        }
+        @include mqSP{
+          border-color: transparent transparent transparent $c_k;
+        }
+      }
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 24px;
+        left: 125px;
+        width: 9px;
+        height: 1px;
+        -webkit-transition: all .2s .2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+        transition: all .2s .2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+        @include mqNotSP{
+          background: $c_k;
+        }
+        @include mqSP{
+          background: $c_k;
+        }
+      }
+      &:hover {
+        &::before {
+          left: 139px;
+          border-color: transparent transparent transparent $c_w;
+//          background: $c_k;
+        }
+        &::after {
+          left: 130px;
+          background: #333;
+          background: $c_w;
+        } 
+      }
+    }
+  }
+  
+  //getMoreInfo
+  &.getMoreInfo {
+    @include mqNotSP{
+      clip-path: inherit;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        top: -9px;
+        left: -7px;
+        width: 15px;
+        height: 15px;
+        background-color: $c_w;
+        z-index: 1000;
+        transform: rotate(135deg);
+      }
+    }
+    
+    a,button{
+      &::before {
+        content:"";
+        display: block;
+        position: absolute;
+        top: 21px;
+        left: 84px;
+        width: 0;
+        height: 0;
+        z-index: 2;
+        border-style: solid;
+        border-width: 4px 0 0 4px;
+        -webkit-transition: all .2s .2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+        transition: all .2s .2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+        @include mqNotSP{
+          border-color: transparent transparent transparent $c_k;
+        }
+        @include mqSP{
+          border-color: transparent transparent transparent $c_k;
+        }
+      }
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 24px;
+        left: 75px;
+        width: 9px;
+        height: 1px;
+        -webkit-transition: all .2s .2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+        transition: all .2s .2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+        @include mqNotSP{
+          background: $c_k;
+        }
+        @include mqSP{
+          background: $c_k;
+        }
+      }
+      &:hover {
+        &::before {
+          left: 89px;
+          border-color: transparent transparent transparent $c_w;
+          //          background: $c_k;
+        }
+        &::after {
+          left: 80px;
+          background: #333;
+          background: $c_w;
+        } 
+      }
+    }
+  }
+  
+  .label{
+    -webkit-transition: all .2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    transition: all .2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  
+  .btn-svg-box{
+    -webkit-transition: all .4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    transition: all .4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    width: 380px;
+    height: 48px;
+    background: #333;
+    position: absolute;
+    top: 0;
+    left: -385px;
+    transform:skewX(-10deg);
+  }
+  
+  i{
+    @include mqNotSP{
+      margin-left: 6px;
+    }
+    @include mqSP{
+      margin-left: 4px;
+    }
+  }
+}
+
+/* ----------------------------
+* btn_empty
+* -------------------------- */
+.btn_empty{
+  pointer-events: none !important;
+  opacity: .5;
+  @include mqNotSP{
+    clip-path: polygon(0 10px,10px 0,200px 0,200px 49px,0 49px);
+    height: 48px;
+  }
+  @include mqSP{
+
+  }
+
+  > span{
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: $c_w;
+    font-size: 12px;
+    letter-spacing: .5px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    line-height: 48px;
+    z-index: 2;
+    overflow: hidden;
+    @include mqNotSP{
+      height: 48px;
+    }
+    @include mqSP{
+      height: 40px;
+      margin: 0 auto;
+      width: 180px;
+      display: block;
+    }
+
+    use{
+      @include mqNotSP{
+        stroke: $c_w;
+      }
+      @include mqSP{
+        stroke: $c_k;
+      }
+    }
+  }
+
+  .label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    @include mqNotSP{
+
+    }
+    @include mqSP{
+      color: $c_k;
+      top: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      line-height: 40px;
+    }
+  }
+
+  .btn-svg-box{
+    width: 220px;
+    height: 48px;
+    background: #FFF;
+    position: absolute;
+    top: 0;
+    left: -270px;
+    transform:skewX(-10deg);
+    @include mqSP{
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,82 @@
+// inline-block
+.inlineBlock {
+  display: inline-block;
+}
+
+// table-cell
+.tableCell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+// float: right
+.fr,
+.imgR {
+  float: right;
+  margin-left: 10px;
+}
+
+// float: left
+.fl,
+.imgL {
+  float: left;
+  margin-right: 10px;
+}
+
+// text-align: center
+.imgC,
+.tC {
+  text-align: center;
+}
+
+// img Centering
+.imgC {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// text-align: right
+.tR,
+.sign {
+  text-align: right;
+}
+
+// box-sizing
+.borderBox {
+  box-sizing: border-box;
+}
+
+// text-shadow none
+.tsNone {
+  text-shadow: none !important;;
+}
+
+// box-shadow none
+.bsNone {
+  box-shadow: none !important;;
+}
+
+// 余白調整用のクラス
+@for $i from 0 through 20 {
+  .mt#{$i * 5} { margin-top: 5px * $i !important; }
+  .mb#{$i * 5} { margin-bottom: 5px * $i !important; }
+  .pt#{$i * 5} { padding-top: 5px * $i !important; }
+  .pb#{$i * 5} { padding-bottom: 5px * $i !important; }
+}
+
+.pc_tb-hide {
+  @include mqNotSP {
+    display: none!important;
+  }
+}
+.pc-hide {
+  @include mqPC {
+    display: none!important;
+  }
+}
+.sp-hide {
+  @include mqSP {
+    display: none!important;
+  }
+}

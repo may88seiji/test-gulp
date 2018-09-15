@@ -1,0 +1,116 @@
+$f_base: arial, helvetica, 'Hiragino Kaku Gothic Pro', Meiryo, Osaka, "MS Pゴシック", "MS PGothic", sans-serif;
+$f_BowlbyOne: 'Bowlby One', cursive;
+$f_lato: 'Lato', sans-serif;
+
+@mixin f_base {
+  font-family: $f_base;
+  letter-spacing: 0.025em;
+}
+
+@mixin f_BowlbyOne {
+  font-family: $f_BowlbyOne;
+  font-weight: normal;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+}
+
+@mixin f_lato {
+  font-family: $f_lato;
+  font-weight: normal;
+  letter-spacing: 0.05em;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?ldgpku');
+  src:  url('fonts/icomoon.eot?ldgpku#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?ldgpku') format('truetype'),
+    url('fonts/icomoon.woff?ldgpku') format('woff'),
+    url('fonts/icomoon.svg?ldgpku#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin icofont {
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-language:before {
+  content: "\e900";
+}
+.icon-link:before {
+  content: "\e901";
+}
+.icon-list:before {
+  content: "\e902";
+}
+.icon-sort:before {
+  content: "\e903";
+}
+.icon-search:before {
+  content: "\e904";
+}
+.icon-check:before {
+  content: "\e905";
+}
+.icon-quotation01:before {
+  content: "\e906";
+}
+.icon-quotation02:before {
+  content: "\e907";
+}
+.icon-left_arrow:before {
+  content: "\e908";
+}
+.icon-right_arrow:before {
+  content: "\e909";
+}
+.icon-plus:before {
+  content: "\e90a";
+}
+.icon-minus:before {
+  content: "\e90b";
+}
+.icon-blank:before {
+  content: "\e90c";
+}
+.icon-pdf:before {
+  content: "\e90d";
+}
+.icon-instagram:before {
+  content: "\e90e";
+}
+.icon-play:before {
+  content: "\e90f";
+}
+.icon-triangle01:before {
+  content: "\e910";
+}
+.icon-triangle02:before {
+  content: "\e911";
+}

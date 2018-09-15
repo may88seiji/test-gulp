@@ -1,0 +1,64 @@
+.js-lazyload {
+  opacity: 0;
+  @include transition;
+  transition-duration: .4s;
+}
+.js-lazyloaded {
+  opacity: 1;
+}
+
+
+.js-lazyloadBG {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+//  background-image: url(../img/bg-lazyload_square.png);
+  background-color: $c_gray03;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.js-lazyloaded {
+  & + .js-lazyloadBG,
+  & > .js-lazyloadBG {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    animation-duration: 0.7s;
+    animation-name: hideLoadingImg;
+  }
+}
+
+.js-lazyload[data-bg],
+.js-lazyloading[data-bg],
+.js-lazyloaded[data-bg] {
+  position: relative;
+}
+.js-lazyloaded[data-bg] {
+  background-size: cover;
+}
+
+@keyframes hideLoadingImg {
+  0% {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  99% {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  100% {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    z-index: -1;
+  }
+}

@@ -1,0 +1,216 @@
+.table{
+  width: 100%;
+  @include mqNotSP{
+    
+  }
+  @include mqSP{
+  
+  }
+  
+  th,td{
+    border-top: 1px solid $c_gray04;
+    border-bottom: 1px solid $c_gray04;
+    @include mqNotSP{
+      padding: 20px 0 20px 20px;
+    }
+    @include mqSP{
+      display: inline-block;
+    }
+  }
+  
+  th{
+    @include f_lato;
+    font-weight: 900;
+    border-top: 1px solid $c_k;
+    vertical-align: top;
+    @include mqNotSP{
+      width: 160px;
+      font-size: 18px;
+      border-bottom: 1px solid $c_k;
+    }
+    @include mqSP{
+    
+    }
+  }
+  td{
+    @include mqNotSP{
+      font-size: 14px;
+    }
+    @include mqSP{
+    
+    }
+  }
+  
+  a{
+    color: $c_orange;
+    border-bottom: 1px solid $c_orange;
+    transition: $tr_speed;
+    @include mqNotSP{
+      &:hover {
+        border-bottom: 1px solid transparent;
+      }
+    }
+    @include mqSP{
+    }
+  }
+  /* ----------------------------
+  * about outline
+  * -------------------------- */
+  .about-outline &{
+    tbody{
+      @include mqSP{
+        border-bottom: 1px solid $c_gray04;
+      }
+    }
+    
+    tr{
+      @include mqSP{
+        padding-bottom: 12px;
+        display: block;
+      }
+      &:first-child {
+        th{
+          @include mqSP{
+            border-top: 1px solid $c_k;
+          }
+        }
+      }
+    }
+
+    th{
+      @include mqSP{
+        width: 100%;
+        padding: 8px 0 0;
+        border-bottom: inherit;
+        border-top: 1px solid $c_gray04;
+      }
+    }
+
+    td{
+      @include mqSP{
+        border-top: inherit;
+        border-bottom: inherit;
+        width: 100%;
+        line-height: 1.5;
+      }
+    }
+
+    li{
+      @include mqSP{
+        padding-bottom: 13px;
+      }
+      &:not(:last-child) {
+        border-bottom: 1px solid $c_gray04;
+        @include mqNotSP{
+          margin-bottom: 24px;
+        }
+        @include mqSP{
+
+        }
+
+      }
+    }
+
+  }
+  
+  
+  /* ----------------------------
+  * stockist
+  * -------------------------- */
+  .page_magazine &{
+    
+    tr{
+      
+      th{
+        @include mqSP{
+          border-top: 1px solid $c_k;
+          border-bottom: 1px solid $c_gray04;
+        }
+      }
+      
+      &:last-child {
+        th{
+          @include mqNotSP{
+            border-bottom: 1px solid $c_gray04;
+          }
+          @include mqSP{
+          
+          }
+        }
+      }
+    }
+    
+    th{
+      @include mqNotSP{
+        
+      }
+      @include mqSP{
+        width: 100%;
+        padding: 12px 0;
+      }
+    }
+    
+    td{
+      @include mqNotSP{
+//        padding: 20px 0 0 20px;
+      }
+      @include mqSP{
+      
+      }
+    }
+    
+    li{
+      @include mqNotSP{
+        padding-bottom: 20px;
+      }
+      @include mqSP{
+        padding-bottom: 13px;
+      }
+      &:not(:last-child) {
+        border-bottom: 1px solid $c_gray04;
+        @include mqNotSP{
+          margin-bottom: 20px;
+        }
+        @include mqSP{
+        
+        }
+
+      }
+    }
+    
+    .title{
+      @include f_lato;
+      font-weight: 900;
+      @include mqNotSP{
+        font-size: 18px;
+      }
+      @include mqSP{
+        font-size: 13px;
+        padding: 12px 0 8px;
+      }
+    }
+    
+    .text{
+      @include mqNotSP{
+        font-size: 14px;
+        margin-bottom: 12px;
+      }
+      @include mqSP{
+        font-size: 13px;
+        line-height: 1.4;
+        margin-bottom: 5px;
+      }
+    }
+    
+    .detail{
+      font-size: 12px;
+      @include mqNotSP{
+        
+      }
+      @include mqSP{
+      
+      }
+    }
+    
+  }
+}

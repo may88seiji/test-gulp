@@ -1,0 +1,62 @@
+.category{
+  @include f_lato;
+  font-weight: 900;
+  @include mqNotSP{
+    margin-bottom: 30px;
+    
+    .page_news &{
+      margin-bottom: 40px;
+    }
+  }
+  @include mqSP{
+  
+  }
+  
+  ul{
+    @include mqNotSP{
+      
+    }
+    @include mqSP{
+      margin-bottom: 18px;
+    }
+  }
+  
+  li{
+    display: inline-block;
+    @include mqNotSP{
+      margin-right: 10px;
+      font-size: 16px;
+      position: relative;
+      line-height: 1.4;
+    }
+    @include mqSP{
+      margin-right: 10px;
+      font-size: 14px;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      border-bottom: 2px solid $c_k;
+      width: 0;
+      left: 0;
+      bottom: -2px;
+      transition: $tr_speed;
+    }
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+    
+    &.is-current {
+      line-height: 1.4;
+      border-bottom: 2px solid $c_k;
+      @include mqNotSP{
+
+      }
+      @include mqSP{
+      
+      }
+    }
+  }
+}

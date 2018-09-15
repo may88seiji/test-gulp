@@ -1,0 +1,389 @@
+.heading_primary{
+  //共通
+  @include mqNotSP{
+
+  }
+  @include mqSP{
+    
+  }
+  
+  /* ----------------------------
+  * top
+  * -------------------------- */
+  .top-kv &{
+    color: $c_w;
+    text-align: center;
+    @include f_BowlbyOne;
+    text-shadow: 0px 0px 10px rgba(0,0,0,.2);
+
+    @include mqNotSP{
+      margin-bottom: 25px;
+      font-size: 40px;
+    }
+    @include mqSP{
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+  }
+  .top-secondary &{
+    @include f_BowlbyOne;
+    @include mqNotSP{
+      color: $c_w;
+      text-align: left;
+      font-size: 30px;
+      margin-bottom: 8px;
+      
+      //暫定
+//      margin-top: 12px;
+    }
+    @include mqSP{
+      font-size: 18px;
+      margin-bottom: 14px;
+      margin-top: 2px;
+      line-height: 1.25;
+    }
+  }
+
+  .top-complement_box &{
+    text-align: left;
+    @include f_BowlbyOne;
+    @include mqNotSP{
+      font-size: 30px;
+      margin-bottom: calc-vw(28,1280);
+      position: relative;
+    }
+    @include mqSP{
+      font-size: 18px;
+      margin-bottom: 13px;
+    }
+    a{
+      @include mqNotSP{
+        //hover
+        @include hover-lineAnimation;
+        padding-bottom: 4px;
+        &::after {
+          border-color: $c_k;
+        }
+      }
+      @include mqSP{
+        font-size: 11px;
+        line-height: 2;
+      }
+      
+    }
+    span{
+      @include mqNotSP{
+        float: inherit;
+        position: absolute;
+        right: 0;
+        top: 14px;
+      }
+      @include mqSP{
+        float: right;
+      }
+    }
+    
+    i{
+      @include mqNotSP{
+        margin-right: 8px;
+        font-size: 10px
+      }
+      @include mqSP{
+        margin-right: 4px;
+        font-size: 10px;
+      }
+    }
+  }
+  
+  /* ----------------------------
+  * pageHead
+  * -------------------------- */
+  .pageHead &{
+    color: $c_w;
+    text-align: center;
+    @include f_BowlbyOne;
+    text-shadow: 0px 0px 10px rgba(0,0,0,.2);
+    text-align: center;
+
+    @include mqNotSP{
+      margin-bottom: 8px;
+      font-size: 40px;
+    }
+    @include mqSP{
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+  }
+
+  /* ----------------------------
+  * journeyArchives
+  * -------------------------- */
+  .journeyArchives-list &{
+    @include f_BowlbyOne;
+    @include mqNotSP{
+      color: $c_w;
+      text-align: left;
+      font-size: 30px;
+      margin-bottom: 8px;
+      
+      //暫定
+//      margin-top: 12px;
+    }
+    @include mqSP{
+      font-size: 18px;
+      margin-bottom: 14px;
+      line-height: 1.25;
+      margin-top: 2px;
+    }
+  }
+  
+  /* ----------------------------
+  * journeySingle
+  * -------------------------- */
+  .journeySingle-kv &{
+    color: $c_w;
+    text-align: center;
+    @include f_BowlbyOne;
+    text-shadow: 0px 0px 10px rgba(0,0,0,.2);
+    line-height: 1.25;
+    @include mqNotSP{
+      margin-bottom: 37px;
+      font-size: 40px;
+    }
+    @include mqSP{
+      font-size: 26px;
+    }
+  }
+  
+//  .journeySingle-introduction &,
+  .journeySingle-recommended &,
+  .journeySingle-contact &{
+    @include f_BowlbyOne;
+    text-align: center;
+    position: relative;
+    @include mqNotSP{
+      font-size: 36px;
+      margin-top: 78px;
+      margin-bottom: 110px;
+    }
+    @include mqSP{
+      font-size: 20px;
+      margin-top: 44px;
+      margin-bottom: 30px;
+    }
+    //装飾
+    @include decoration;
+  }
+  
+  .journeySingle-introduction &{
+    @include f_BowlbyOne;
+    text-align: center;
+    position: relative;
+    @include mqNotSP{
+      font-size: 36px;
+      margin-top: 78px;
+      margin-bottom: 110px;
+    }
+    @include mqSP{
+      font-size: 20px;
+      margin-top: 40px;
+      margin-bottom: 38px;
+    }
+    //装飾
+    @include decoration;
+  }
+  /* ----------------------------
+  * recommended
+  * -------------------------- */
+  .recommended &{
+    @include f_BowlbyOne;
+    @include mqNotSP{
+      font-size: 30px;
+      margin-bottom: 35px;
+      position: relative;
+    }
+    @include mqSP{
+      font-size: 18px;
+      margin-top: 40px;
+      margin-bottom: 26px;
+      text-align: center;
+    }
+    
+    span{
+      @include mqNotSP{
+        @include f_lato;
+        font-weight: 900;
+        float: inherit;
+        position: absolute;
+        right: 0;
+        top: 14px;
+        font-size: 14px;
+      }
+      @include mqSP{
+        display: none;
+      }
+    }
+
+    i{
+      @include mqNotSP{
+        margin-right: 8px;
+        font-size: 10px
+      }
+      @include mqSP{
+        display: none;
+      }
+    }
+    
+    a{
+      @include mqNotSP{
+        //hover
+        @include hover-lineAnimation;
+        padding-bottom: 4px;
+        &::after {
+          border-color: $c_k;
+        }
+      }
+    }
+  }
+  
+  /* ----------------------------
+  * about
+  * -------------------------- */
+  .about-value &{
+    font-weight: 900;
+    line-height: 1.5;
+    @include mqNotSP{
+      font-size: 26px;
+    }
+    @include mqSP{
+      font-size: 16px;
+    }
+  }
+  .about-outline &,
+  .about-office &,
+  .about-who &{
+    @include f_BowlbyOne;
+    text-align: center;
+    position: relative;
+    @include mqNotSP{
+      font-size: 36px;
+      margin-top: 76px;
+      margin-bottom: 110px;
+    }
+    @include mqSP{
+      font-size: 20px;
+      margin-top: 38px;
+      margin-bottom: 32px;
+    }
+    @include decoration;
+  }
+  
+  /* ----------------------------
+  * post
+  * -------------------------- */
+  .page_post &{
+    @include f_BowlbyOne;
+    @include mqNotSP{
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+    @include mqSP{
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+  }
+  /* ----------------------------
+  * site privacy policy
+  * -------------------------- */
+  .page_page &{
+    @include f_BowlbyOne;
+    text-align: center;
+    @include mqNotSP{
+      font-size: 40px;
+      margin-bottom: 80px;
+    }
+    @include mqSP{
+      font-size: 26px;
+      margin-bottom: 42px;
+    }
+  }
+  
+  /* ----------------------------
+  * page_notFound
+  * -------------------------- */
+  .page_notFound &{
+    @include f_BowlbyOne;
+    text-align: center;
+    @include mqNotSP{
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+    @include mqSP{
+      font-size: 26px;
+      margin-bottom: 5px;
+    }
+  }
+  /* ----------------------------
+  * contact
+  * -------------------------- */
+  .contact &{
+    @include f_BowlbyOne;
+    text-align: center;
+    @include mqNotSP{
+      font-size: 40px;
+      margin-top: 120px;
+      margin-bottom: 80px;
+    }
+    @include mqSP{
+      font-size: 26px;
+      margin-top: 100px;
+      margin-bottom: 42px;
+
+    }
+  }
+}
+
+
+
+
+.heading_secondary{
+  /* ----------------------------
+  * journeySingle
+  * -------------------------- */
+  .journeySingle-introduction-middleText &{
+    @include f_BowlbyOne;
+    @include mqNotSP{
+      font-size: 30px;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+    @include mqSP{
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+  }
+  
+  .journeySingle-recommended-top &{
+    @include f_BowlbyOne;
+    @include mqNotSP{
+      font-size: 28px;
+      color: $c_w;
+      margin-bottom: 16px;
+    }
+    @include mqSP{
+      font-size: 15px;
+      margin-bottom: 2px;
+    }
+  }
+}
+
+.heading_formTitle{
+  font-weight: bold;
+  @include mqNotSP{
+    font-size: 14px;
+  }
+  @include mqSP{
+  
+  }
+}
+

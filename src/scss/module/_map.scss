@@ -1,0 +1,48 @@
+.map{
+  //journeySingle
+  .page_journeySingle &{
+    background-color: $c_k;
+    @include mqNotSP{
+      height: 400px;
+      width:800px;
+      margin-bottom: 32px;
+    }
+    @include mqSP{
+      height: 290px;
+      box-sizing: border-box;
+      margin: 0 10px 10px;
+    }
+  }
+  
+  //about
+  .page_about &{
+    background-color: $c_k;
+      @include mqNotSP{
+        box-sizing: border-box;
+        margin: 5px;
+        height: 390px;
+      }
+      @include mqSP{
+        height: 270px;
+        box-sizing: border-box;
+        margin: 5px;
+      }
+    
+    .gm-style{
+      > div{
+        &:first-child {
+          >div{
+            &:first-child {
+              @include mqNotSP{
+                transform: translateY(60px) !important;
+              }
+              @include mqSP{
+                transform: translateY(20px) !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
